@@ -6,7 +6,6 @@ module.exports = {
     'next',
     'prettier',
     'react-app',
-    'plugin:@typescript-eslint/recommended',
     'plugin:storybook/recommended',
     'plugin:import/recommended',
     'plugin:react/recommended',

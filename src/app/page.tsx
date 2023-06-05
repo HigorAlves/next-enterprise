@@ -1,8 +1,13 @@
-import Head from "next/head"
-import { Button } from "src/components/Button/Button"
-import { LP_GRID_ITEMS } from "../lp-items"
+import { Metadata } from 'next'
+import Head from 'next/head'
+import { Button } from '~/components/Button/Button'
+import { LP_GRID_ITEMS } from '~/lp-items'
 
-export default function Web() {
+export const metadata: Metadata = {
+  title: 'My Page Title',
+}
+
+export default function Page() {
   return (
     <>
       <Head>
@@ -23,9 +28,9 @@ export default function Web() {
               Next.js Enterprise Boilerplate
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate!
-              Experience rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and
-              enjoyable development process.
+              Your enterprise project with our feature-packed, high-performance Next.js boilerplate! Experience rapid UI
+              development, AI-powered code reviews, and an extensive suite of tools for a smooth and enjoyable
+              development process.
             </p>
             <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
               Get started

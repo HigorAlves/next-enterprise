@@ -1,0 +1,3 @@
+{
+  "*.{tsx,ts,json,js,yml}": ["prettier --write .", "pretty-quick --staged", "eslint"]
+}

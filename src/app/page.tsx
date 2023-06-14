@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import Head from 'next/head'
-import { Button } from '~/components/Button/Button'
 import { LP_GRID_ITEMS } from '~/lp-items'
 
 export const metadata: Metadata = {
@@ -28,19 +27,9 @@ export default function Page() {
               Next.js Enterprise Boilerplate
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Your enterprise project with our feature-packed, high-performance Next.js boilerplate! Experience rapid UI
-              development, AI-powered code reviews, and an extensive suite of tools for a smooth and enjoyable
-              development process.
+              Enterprise project with feature-packed, high-performance Next.js boilerplate! Experience rapid UI
+              development and an extensive suite of tools for a smooth and enjoyable development process.
             </p>
-            <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
-              Get started
-            </Button>
-            <Button
-              href="https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise"
-              intent="secondary"
-            >
-              Deploy Now
-            </Button>
           </div>
         </div>
       </section>

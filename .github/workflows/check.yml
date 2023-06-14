@@ -15,10 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
-      - name: "use node ${{ env.node_version }}"
+      - name: 'use node ${{ env.node_version }}'
         uses: actions/setup-node@v3
         with:
-          node-version: "${{ env.node_version }}"
+          node-version: '${{ env.node_version }}'
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Lint check

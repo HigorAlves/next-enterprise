@@ -1,4 +1,4 @@
-name: "Next.js Bundle Analysis"
+name: 'Next.js Bundle Analysis'
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v3
         with:
-          node-version: "18.x"
+          node-version: '18.x'
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -99,7 +99,7 @@ jobs:
         id: fc
         with:
           issue-number: ${{ github.event.number }}
-          body-includes: "<!-- __NEXTJS_BUNDLE -->"
+          body-includes: '<!-- __NEXTJS_BUNDLE -->'
 
       - name: Create Comment
         uses: peter-evans/create-or-update-comment@v3

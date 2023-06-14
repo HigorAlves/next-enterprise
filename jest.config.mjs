@@ -11,7 +11,7 @@ const config = {
   modulePathIgnorePatterns: ["<rootDir>/dist/", 'cypress'],
   testPathIgnorePatterns: ["<rootDir>/e2e"],
   collectCoverage: true,
-  coverageDirectory: '../../reports/jest/web',
+  coverageDirectory: './reports/jest/coverage',
   coverageReporters: ['lcov'],
   testRegex: '(/__tests__/.*|(\\\\.|/)(test))\\\\.[jt]sx?$',
   moduleNameMapper: {

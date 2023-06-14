@@ -495,3 +495,4 @@ yarn-error.log*
 /playwright-report/
 /playwright/.cache/
 /reports/
+.husky/

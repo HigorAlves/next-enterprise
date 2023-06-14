@@ -1,15 +1,15 @@
-import nextJest from "next/jest.js"
+import nextJest from 'next/jest.js'
 
 const createJestConfig = nextJest({
-  dir: "./",
+  dir: './',
 })
 
 /** @type {import('jest').Config} */
 const config = {
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
-  testEnvironment: "jest-environment-jsdom",
-  modulePathIgnorePatterns: ["<rootDir>/dist/", 'cypress'],
-  testPathIgnorePatterns: ["<rootDir>/e2e"],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  testEnvironment: 'jest-environment-jsdom',
+  modulePathIgnorePatterns: ['<rootDir>/dist/', 'cypress'],
+  testPathIgnorePatterns: ['<rootDir>/e2e'],
   collectCoverage: true,
   coverageDirectory: './reports/jest/coverage',
   coverageReporters: ['lcov'],

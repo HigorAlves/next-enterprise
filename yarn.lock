@@ -4550,17 +4550,17 @@
   dependencies:
     tslib "^2.4.0"
 
-"@t3-oss/env-core@0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@t3-oss/env-core/-/env-core-0.4.0.tgz#e2d496cc0b37eb99a391c75fe0213b8de3a6b024"
-  integrity sha512-6JlMp0Vru15q/axHzBKsQQjiyGS6k+EsZBY1iErGVmOGzNSoVluBahnYFP7tEkwZ7KoRgSq4NRIc1Ez7SVYuxQ==
+"@t3-oss/env-core@0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@t3-oss/env-core/-/env-core-0.5.0.tgz#2efd8e4987ba86b853c9bf7e4811685df247433b"
+  integrity sha512-EptD5z+9wNUlUdaembwXhz5hMqetIm0R6j/f7r58vintBWaJeaiKNnqARUA/FKK5jzR1U8jbgYD7K/F8Q8XZhg==
 
-"@t3-oss/env-nextjs@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@t3-oss/env-nextjs/-/env-nextjs-0.4.0.tgz#5a7e8f8f88d6d0858487086c8dd44212b141814b"
-  integrity sha512-K1u2i+S/uEhjfg++FqWlOzS6x237EARRbWGowH2MkDkFu2q7ZJSiJBJT8e47L7NHWH5IyZrTCM6BdOxyWEnQuQ==
+"@t3-oss/env-nextjs@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@t3-oss/env-nextjs/-/env-nextjs-0.5.0.tgz#e16df0b4550af39e3bfc78150c93c916c8fc8e0b"
+  integrity sha512-2Xb8y3EazxGMz1czwcQe+R0baj+PxYhZHY9clD2b1jSbFyelRwX3NP9MQI3njAeUUa1pbFwC468gf+8tX8faag==
   dependencies:
-    "@t3-oss/env-core" "0.4.0"
+    "@t3-oss/env-core" "0.5.0"
 
 "@testing-library/dom@^8.3.0":
   version "8.20.0"
@@ -8588,13 +8588,6 @@ eslint-config-standard@^17.1.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-17.1.0.tgz#40ffb8595d47a6b242e07cbfd49dc211ed128975"
   integrity sha512-IwHwmaBNtDK4zDHQukFDW5u/aTb8+meQWZvNFWkiGmbWjD6bqyuSSBxxXKkCftCUzc1zwCH2m/baCNDLGmuO5Q==
 
-eslint-config-turbo@latest:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-turbo/-/eslint-config-turbo-1.10.1.tgz#9c1c8383d89577405d12a03a70b2342ee688c19d"
-  integrity sha512-XRF5adpGJIX+IQNRHcGtUCsPZV95vabSvttrxuLOyWufzBctWNkgIo8Mpi5om8ZmYuMqXPUo8IOh3sRR5H1HCw==
-  dependencies:
-    eslint-plugin-turbo "1.10.1"
-
 eslint-import-resolver-node@^0.3.6, eslint-import-resolver-node@^0.3.7:
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.7.tgz#83b375187d412324a1963d84fa664377a23eb4d7"
@@ -8773,11 +8766,6 @@ eslint-plugin-testing-library@^5.0.1, eslint-plugin-testing-library@^5.11.0:
   integrity sha512-ELY7Gefo+61OfXKlQeXNIDVVLPcvKTeiQOoMZG9TeuWa7Ln4dUNRv8JdRWBQI9Mbb427XGlVB1aa1QPZxBJM8Q==
   dependencies:
     "@typescript-eslint/utils" "^5.58.0"
-
-eslint-plugin-turbo@1.10.1:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-turbo/-/eslint-plugin-turbo-1.10.1.tgz#3fa24a308c4839a5c4d969a59651ab3fd72b6021"
-  integrity sha512-bScQeG42PhVPzSeJgCTk79hRqN8jFYY6Io7fw2qyuOtlff4QkSuBTot+BBooxk4BL11gJglWZUJk2nqumLJGOA==
 
 eslint-scope@5.1.1, eslint-scope@^5.1.1:
   version "5.1.1"

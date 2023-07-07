@@ -1,21 +1,17 @@
 import React from 'react'
-import { cva, type VariantProps } from 'class-variance-authority'
+import { tv, type VariantProps } from 'tailwind-variants'
 
-import { twMerge } from 'tailwind-merge'
-
-const button = cva(
-  [
-    'justify-center',
-    'inline-flex',
-    'items-center',
-    'rounded-xl',
-    'text-center',
-    'border',
-    'border-blue-400',
-    'transition-colors',
-    'delay-50',
-  ],
+const button = tv(
   {
+    base: ['justify-center',
+      'inline-flex',
+      'items-center',
+      'rounded-xl',
+      'text-center',
+      'border',
+      'border-blue-400',
+      'transition-colors',
+      'delay-50'],
     variants: {
       intent: {
         primary: ['bg-blue-400', 'text-white', 'hover:enabled:bg-blue-700'],
@@ -41,7 +37,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLAnchorElemen
 
 export function Button({ className, intent, size, underline, ...props }: ButtonProps) {
   return (
-    <a className={twMerge(button({ intent, size, className, underline }))} {...props}>
+    <a className={(button({ intent, size, className, underline }))} {...props}>
       {props.children}
     </a>
   )

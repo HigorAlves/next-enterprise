@@ -5,11 +5,9 @@ module.exports = {
   extends: [
     'next',
     'prettier',
-    'react-app',
     'plugin:storybook/recommended',
     'plugin:import/recommended',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
     'plugin:import/typescript',
     'plugin:storybook/recommended',
@@ -42,13 +40,6 @@ module.exports = {
       },
     ],
     'testing-library/prefer-screen-queries': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
-      {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-      },
-    ],
     'sort-imports': [
       'error',
       {

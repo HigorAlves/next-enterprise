@@ -9,6 +9,7 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
   reactStrictMode: true,
   trailingSlash: true,
   productionBrowserSourceMaps: true,
+  output: 'standalone',
   experimental: { instrumentationHook: true },
   rewrites() {
     return [

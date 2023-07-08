@@ -48,7 +48,7 @@ jobs:
 
   test:
     name: Test
-    needs: [lint, prettier]
+    needs: [eslint, prettier]
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:

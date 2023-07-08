@@ -32,10 +32,24 @@ jobs:
         run: yarn lint
       - name: Prettier
         run: yarn prettier . --check
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '18'
+          check-latest: true
+      - name: Install Npm Dependencies
+        run: yarn install
+      - name: Prettier
+        run: yarn prettier . --check
 
   test:
     name: Test
-    needs: lint
+    needs: [lint, prettier]
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:

@@ -16,10 +16,35 @@ on:
       - '*.md'
 
 jobs:
+  analyze:
+    name: Analyze Code Quality
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript' ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: ${{ matrix.language }}
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v1
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1
+
   eslint:
     name: Eslint
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    needs:
+      - analyze
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -34,6 +59,8 @@ jobs:
     name: Prettier
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    needs:
+      - analyze
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -46,7 +73,9 @@ jobs:
 
   test:
     name: Unit & Integration tests
-    needs: [eslint, prettier]
+    needs:
+      - eslint
+      - prettier
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -59,10 +88,12 @@ jobs:
       - name: Run jest with CI option
         run: yarn test:ci
 
-  accpetance:
+  acceptance:
     name: Smoke & Acceptance tests
     runs-on: ubuntu-latest
-    needs: [eslint, prettier]
+    needs:
+      - eslint
+      - prettier
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -73,14 +104,14 @@ jobs:
       - name: Smoke & Acceptance tests
         run: |
           yarn build-storybook --quiet
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook"
+          yarn test:acceptance
 
   build:
     name: Build
     runs-on: ubuntu-latest
-    needs: [test, accpetance]
+    needs:
+      - test
+      - acceptance
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v3

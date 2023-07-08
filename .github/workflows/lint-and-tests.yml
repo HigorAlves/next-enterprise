@@ -17,7 +17,7 @@ on:
 
 jobs:
   eslint:
-    name: eslint
+    name: Eslint
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:

@@ -1,4 +1,5 @@
 name: Lint | Test | Build
+
 on:
   push:
     branches:
@@ -16,18 +17,26 @@ on:
       - '*.md'
 
 jobs:
+  install-dependencies:
+    name: Install dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
+      - name: 'use node ${{ env.node_version }}'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '${{ env.node_version }}'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
   eslint:
     name: Eslint
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    needs: install-dependencies
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '18'
-          check-latest: true
-      - name: Install Npm Dependencies
-        run: yarn install
+      - uses: actions/checkout@v3
       - name: Eslint
         run: yarn lint
 
@@ -35,45 +44,41 @@ jobs:
     name: Prettier
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    needs: install-dependencies
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '18'
-          check-latest: true
-      - name: Install Npm Dependencies
-        run: yarn install
+      - uses: actions/checkout@v3
       - name: Prettier
         run: yarn prettier . --check
 
   test:
-    name: Test
-    needs: [eslint, prettier]
+    name: Unit & Integration tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    needs: [eslint, prettier]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '18'
-          check-latest: true
-      - name: Install Npm Dependencies
-        run: yarn install
+      - uses: actions/checkout@v3
       - name: Run jest with CI option
         run: yarn test:ci
+
+  acceptance:
+    name: Smoke & Acceptance tests
+    runs-on: ubuntu-latest
+    needs: [eslint, prettier]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Smoke & Acceptance tests
+        run: |
+          yarn build-storybook --quiet
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 6006 --silent" \
+            "npx wait-on tcp:127.0.0.1:6006 && yarn test-storybook"
 
   build:
     name: Build
     runs-on: ubuntu-latest
-    needs: test
+    needs: [test, acceptance]
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '18'
-          check-latest: true
-      - name: Install Npm Dependencies
-        run: yarn install
+      - uses: actions/checkout@v3
       - name: Eslint
         run: yarn build

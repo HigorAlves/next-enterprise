@@ -76,7 +76,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Smoke & Acceptance tests
         run: |
-          yarn build-storybook --quiet
+          yarn build:storybook --quiet
           yarn test:acceptance
 
   build:

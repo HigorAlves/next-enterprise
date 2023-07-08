@@ -1,5 +1,4 @@
 name: Lint | Test | Build
-
 on:
   push:
     branches:
@@ -17,26 +16,17 @@ on:
       - '*.md'
 
 jobs:
-  install-dependencies:
-    name: Install dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo "node_version=$(cat .github/nodejs.version)" >> $GITHUB_ENV
-      - name: 'use node ${{ env.node_version }}'
-        uses: actions/setup-node@v3
-        with:
-          node-version: '${{ env.node_version }}'
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-
   eslint:
     name: Eslint
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    needs: install-dependencies
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
       - name: Eslint
         run: yarn lint
 
@@ -44,28 +34,42 @@ jobs:
     name: Prettier
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    needs: install-dependencies
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
       - name: Prettier
         run: yarn prettier . --check
 
   test:
     name: Unit & Integration tests
+    needs: [eslint, prettier]
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    needs: [eslint, prettier]
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
       - name: Run jest with CI option
         run: yarn test:ci
 
-  acceptance:
+  accpetance:
     name: Smoke & Acceptance tests
     runs-on: ubuntu-latest
     needs: [eslint, prettier]
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
       - name: Smoke & Acceptance tests
         run: |
           yarn build-storybook --quiet
@@ -76,9 +80,14 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    needs: [test, acceptance]
+    needs: [test, accpetance]
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v3
-      - name: Eslint
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build NextJS App
         run: yarn build

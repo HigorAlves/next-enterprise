@@ -19,9 +19,7 @@ jobs:
   eslint:
     name: Eslint
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    needs:
-      - analyze
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -35,9 +33,7 @@ jobs:
   prettier:
     name: Prettier
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    needs:
-      - analyze
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3

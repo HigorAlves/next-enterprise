@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+const { withTV } = require('tailwind-variants/transformer')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports = withTV({
   darkMode: 'class',
   content: [
     './index.html',
@@ -86,4 +86,4 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-}
+})

@@ -4,13 +4,6 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = withTV({
   darkMode: 'class',
-  purge: [
-    './index.html',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
   content: [
     './index.html',
     './app/**/*.{js,ts,jsx,tsx,mdx}',

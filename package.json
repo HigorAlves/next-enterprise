@@ -38,15 +38,14 @@
     "release": "semantic-release"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^13.4.9",
-    "@t3-oss/env-nextjs": "^0.6.0",
-    "next": "^13.4.9",
+    "@next/bundle-analyzer": "^13.4.19",
+    "@t3-oss/env-nextjs": "^0.6.1",
+    "next": "^13.4.19",
     "next-compose-plugins": "^2.2.1",
-    "pretty-quick": "^3.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwind-variants": "^0.1.10",
-    "zod": "^3.21.4"
+    "tailwind-variants": "^0.1.13",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
@@ -70,6 +69,7 @@
     "@storybook/testing-library": "^0.2.0",
     "@testing-library/jest-dom": "^6.0.1",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "^20.5.3",
     "@types/react": "^18.2.21",
@@ -107,6 +107,7 @@
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
+    "pretty-quick": "^3.1.3",
     "semantic-release": "^21.0.9",
     "solidarity": "^3.0.4",
     "storybook": "^7.3.2",

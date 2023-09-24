@@ -44,7 +44,7 @@
     "next-compose-plugins": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwind-variants": "^0.1.13",
+    "tailwind-variants": "^0.1.14",
     "zod": "^3.22.2"
   },
   "devDependencies": {

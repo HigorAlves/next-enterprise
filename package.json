@@ -103,7 +103,7 @@
     "jest-environment-jsdom": "^29.6.3",
     "lint-staged": "^14.0.1",
     "patch-package": "^8.0.0",
-    "postcss": "^8.4.28",
+    "postcss": "^8.4.31",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",

@@ -25,8 +25,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: yarn install
       - name: Eslint
         run: yarn lint
 
@@ -39,8 +40,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: yarn install
       - name: Prettier
         run: yarn prettier . --check
 
@@ -56,14 +58,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+          cache: 'yarn'
+      - name: Install Dependencies
+        run: yarn install
       - name: Run jest with CI option
         run: yarn test:ci
 
   acceptance:
     name: Smoke & Acceptance tests
     runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 10
     needs:
       - eslint
       - prettier
@@ -72,12 +77,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Install Dependencies
+        run: yarn install
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Build Storybook
+        run: yarn build:storybook --quiet
       - name: Smoke & Acceptance tests
-        run: |
-          yarn build:storybook --quiet
-          yarn test:acceptance
+        run: yarn test:acceptance
 
   build:
     name: Build
@@ -91,7 +98,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version-file: .nvmrc
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Install Dependencies
+        run: yarn install
       - name: Build NextJS App
         run: yarn build

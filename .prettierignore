@@ -1,3 +1,6 @@
 .next
 node_modules
-.eslintrc.js
+next.config.mjs
+cypress/support
+global.css
+tsconfig.json

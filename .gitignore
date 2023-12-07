@@ -496,3 +496,5 @@ yarn-error.log*
 /playwright/.cache/
 /reports/
 .husky/
+# Sentry Auth Token
+.sentryclirc

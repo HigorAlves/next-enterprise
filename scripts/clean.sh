@@ -11,6 +11,7 @@ rm -fr serverless/*/node_modules
 rm -fr services/*/node_modules
 rm -fr stacks/*/node_modules
 rm -fr reports
+rm -fr @types
 rm -fr "*/**/package-lock.json"
 rm -fr "*/**/yarn.lock"
 rm -fr .husky

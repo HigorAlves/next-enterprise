@@ -498,3 +498,5 @@ yarn-error.log*
 .husky/
 # Sentry Auth Token
 .sentryclirc
+
+@types

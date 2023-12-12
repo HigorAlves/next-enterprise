@@ -1,13 +1,15 @@
 import type { CodegenConfig } from '@graphql-codegen/cli'
+
 import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-const TOKEN = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
-const SPACE = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID
-const URL = `${process.env.NEXT_PUBLIC_CONTENTFUL_URL}${SPACE}`
+const TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN
+const SPACE = process.env.CONTENTFUL_SPACE_ID
+const URL = `${process.env.CONTENTFUL_URL}${SPACE}`
 
 const config: CodegenConfig = {
+  overwrite: true,
   schema: [
     {
       [URL]: {
@@ -17,10 +19,9 @@ const config: CodegenConfig = {
       },
     },
   ],
-  overwrite: true,
   documents: ['src/graphql/**/*.ts', 'src/**/*.tsx'],
   generates: {
-    'src/gql/': {
+    '@types/gql/': {
       preset: 'client',
       plugins: [],
       presetConfig: {
@@ -28,6 +29,7 @@ const config: CodegenConfig = {
       },
     },
   },
+  ignoreNoDocuments: true,
 }
 
 export default config

@@ -46,7 +46,7 @@
     "@t3-oss/env-nextjs": "^0.7.1",
     "@tabler/icons-react": "^2.44.0",
     "@tippyjs/react": "^4.2.6",
-    "contentful": "^9.3.5",
+    "contentful": "^10.4.0",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "next": "^14.0.4",

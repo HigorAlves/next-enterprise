@@ -9,10 +9,10 @@
   },
   "scripts": {
     "predev": "yarn generate",
-    "dev": "next dev",
     "generate": "yarn generate:types && yarn generate:gql",
     "generate:types": "contentful-typescript-codegen --output @types/contentful.d.ts",
     "generate:gql": "graphql-codegen --config helpers/codegen.ts",
+    "dev": "next dev",
     "build": "next build",
     "build:storybook": "storybook build",
     "start": "next start",

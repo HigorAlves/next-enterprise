@@ -7,7 +7,7 @@ Welcome to the _Next.js Enterprise Boilerplate_, an open-source template for ent
 With this template, you get all the awesomeness you need:
 
 - 🏎️ **[Next.js](https://nextjs.org/)** - Fast by default, with config optimized for performance
-- 💅 **[Tailwind CSS](https://tailwindcss.com/)** - A utility-first CSS framework for rapid UI development
+- 💅 **[Mantine](https://mantine.dev)** - A fully featured React components library with dark mode support
 - ✨ **[ESlint](https://eslint.org/)** and **[Prettier](https://prettier.io/)** - For clean, consistent, and error-free code
 - 🛠️ **[Extremely strict TypeScript](https://www.typescriptlang.org/)** - With [`ts-reset`](https://github.com/total-typescript/ts-reset) library for ultimate type safety
 - 📊 **[Bundle analyzer plugin](https://www.npmjs.com/package/@next/bundle-analyzer)** - Keep an eye on your bundle size
@@ -18,9 +18,10 @@ With this template, you get all the awesomeness you need:
 - 📝 **[Conventional commits git hook](https://www.conventionalcommits.org/)** - Keep your commit history neat and tidy
 - 🔍 **[Observability](https://opentelemetry.io/)** - Open Telemetry integration for seamless monitoring
 - 🎯 **[Absolute imports](https://nextjs.org/docs/advanced-features/module-path-aliases)** - No more spaghetti imports
-- ⚕️ **[Health checks](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)** - Kubernetes-compatible for robust deployments
-- 💎 **[Tailwind Variantes](https://www.tailwind-variants.org)** - Create a consistent, reusable, and atomic design system
-- 🤖 **[Renovate BOT](https://www.whitesourcesoftware.com/free-developer-tools/renovate)** - Auto-updating dependencies, so you can focus on coding
+- ❤️️ *
+  *[Health checks](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+  ** - Kubernetes-compatible for robust deployments
+- 🤖 **[Dependa BOT](https://github.com/dependabot)** - Auto-updating dependencies, so you can focus on coding
 - 🩹 **[Patch-package](https://www.npmjs.com/package/patch-package)** - Fix external dependencies without losing your mind
 - 📈 **Components coupling and cohesion graph** - A tool for managing component relationships
 - 🚀 **[GitHub Actions](https://github.com/features/actions)** - Pre-configured actions for smooth workflows, including Bundle Size and performance stats
@@ -31,6 +32,16 @@ With this template, you get all the awesomeness you need:
 ## 🎯 Getting Started
 
 To get started with this boilerplate, follow these steps:
+
+1. Check & configure your enviroment
+
+```bash
+## Check your environment
+yarn audit:env
+
+## Set husky and our code quality tools
+yarn prepare:env
+```
 
 1. Fork & clone repository:
 

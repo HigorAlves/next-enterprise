@@ -7,6 +7,7 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core'
 
 // eslint-disable-next-line camelcase
 import { Sora, Source_Code_Pro, Space_Grotesk } from 'next/font/google'
+import { DraftModeAlert } from '~/components/DraftModeAlert/DraftModeAlert.component'
 import { Layout } from '~/layout/index.layout'
 
 const sora = Sora({
@@ -66,7 +67,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }}
           defaultColorScheme={'dark'}
         >
-          <Layout layout={'basic'} main={children} />
+          <Layout
+            layout={'basic'}
+            main={
+              <>
+                <DraftModeAlert />
+                {children}
+              </>
+            }
+          />
         </MantineProvider>
       </body>
     </html>

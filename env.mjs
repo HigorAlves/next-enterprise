@@ -27,4 +27,3 @@ export const env = createEnv({
     CONTENTFUL_PREVIEW_SECRET: process.env.CONTENTFUL_PREVIEW_SECRET,
   },
 })
-

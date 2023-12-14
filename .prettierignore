@@ -4,3 +4,4 @@ next.config.mjs
 cypress/support
 global.css
 tsconfig.json
+README.md

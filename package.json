@@ -9,8 +9,9 @@
   },
   "scripts": {
     "predev": "yarn generate",
+    "prebuild": "yarn generate",
     "generate": "yarn generate:types && yarn generate:gql",
-    "generate:types": "contentful-typescript-codegen --output @types/contentful.d.ts && bash ./scripts/cf-generator.sh",
+    "generate:types": "bash ./scripts/cf-generator.sh",
     "generate:gql": "graphql-codegen --config helpers/codegen.ts",
     "dev": "next dev",
     "build": "next build",

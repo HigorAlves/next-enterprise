@@ -18,9 +18,11 @@ With this template, you get all the awesomeness you need:
 - 📝 **[Conventional commits git hook](https://www.conventionalcommits.org/)** - Keep your commit history neat and tidy
 - 🔍 **[Observability](https://opentelemetry.io/)** - Open Telemetry integration for seamless monitoring
 - 🎯 **[Absolute imports](https://nextjs.org/docs/advanced-features/module-path-aliases)** - No more spaghetti imports
--
-❤️️ \* \*[Health checks](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
-\*\* - Kubernetes-compatible for robust deployments
+- 🐛 **[Sentry](https://docs.sentry.io/?original_referrer=https%3A%2F%2Fwww.google.com%2F)** - Sentry is a
+  developer-first error tracking and performance monitoring platform.
+- ❤️️ *
+  *[Health checks](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+  ** - Kubernetes-compatible for robust deployments
 - 🤖 **[Dependa BOT](https://github.com/dependabot)** - Auto-updating dependencies, so you can focus on coding
 - 🩹 **[Patch-package](https://www.npmjs.com/package/patch-package)** - Fix external dependencies without losing your mind
 - 📈 **Components coupling and cohesion graph** - A tool for managing component relationships
@@ -29,44 +31,141 @@ With this template, you get all the awesomeness you need:
 - 🚢 **[Semantic Release](https://github.com/semantic-release/semantic-release)** - for automatic changelog
 - 💻 **[T3 Env](https://env.t3.gg/)** - Manage your environment variables with ease
 
-## 🎯 Getting Started
+# Project Setup Guide
 
-To get started with this boilerplate, follow these steps:
+This guide provides step-by-step instructions on how to set up your local environment for this project.
 
-1. Check & configure your enviroment
+## Prerequisites
 
-```bash
-## Check your environment
-yarn audit:env
+Before you begin, ensure you have the following installed:
 
-## Set husky and our code quality tools
-yarn prepare:env
-```
+- [Node.js](https://nodejs.org/en/), which includes `npm`.
+- [Yarn](https://yarnpkg.com/) package manager.
 
-1. Fork & clone repository:
+## Installation
 
-```bash
-## Don't forget to ⭐ star and fork it first :)
-git clone https://github.com/<your_username)/next-enterprise.git
-```
+1. **Clone the Repository:**
+   Clone the project repository to your local machine using Git.
 
-2. Install the dependencies:
+   ```bash
+   git clone [repository URL]
+   cd [project directory]
+   ```
 
-```bash
-yarn install --frozen-lockfile
-```
+2. **Install Dependencies:**
+   Use yarn to install the necessary dependencies.
 
-3. Run the development server:
+   ```bash
+   yarn install
+   ```
 
-```bash
-yarn dev
-```
+## Running the Project
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Development Environment:**
+   To start the development server, run:
 
-5. This project uses a git hook to enforce [conventional commits](https://github.com/qoomon/git-conventional-commits). To install the git hook, run the following command in the root directory of the project:
+   ```bash
+   yarn dev
+   ```
+   This will start the Next.js development server. You can view your application at `http://localhost:3000`.
 
-```sh
-brew install pre-commit
-pre-commit install -t commit-msg
-```
+
+2. **Building for Production:**
+   To create a production build, use:
+
+   ```bash
+   yarn build
+   ```
+
+   After building, you can start the production server with:
+
+   ```bash
+   yarn start
+   ```
+
+## Testing
+
+- **Run Unit Tests:**
+  To execute unit tests, use:
+
+  ```bash
+  yarn test
+  ```
+
+- **End-to-End Testing with Cypress:**
+  Open Cypress for interactive testing:
+
+  ```bash
+  yarn cypress:open
+  ```
+
+  Or run Cypress tests headlessly:
+
+  ```bash
+  yarn cypress:run
+  ```
+
+## Linting and Code Quality
+
+- **Linting:**
+  Check for linting errors with:
+
+  ```bash
+  yarn lint
+  ```
+
+- **Code Quality Audits:**
+  Perform security and environment audits:
+
+  ```bash
+  yarn audit
+  yarn audit:env
+  ```
+
+## Additional Scripts
+
+- **Generate GraphQL Code:**
+  To generate GraphQL types and queries, use:
+
+  ```bash
+  yarn generate
+  ```
+
+- **Analyze Bundle Size:**
+  Analyze the bundle size with:
+
+  ```bash
+  yarn analyze
+  ```
+
+- **Prepare Environment:**
+  Set up your environment variables and hooks:
+
+  ```bash
+  yarn prepare:env
+  ```
+
+- **Release:**
+  For semantic versioning and release, run:
+
+  ```bash
+  yarn release
+  ```
+
+- **Check & configure your enviroment**
+
+    ```bash
+    ## Check your environment
+    yarn audit:env
+    
+    ## Set husky and our code quality tools
+    yarn prepare:env
+    ```
+
+- This project uses a git hook to enforce [conventional commits](https://github.com/qoomon/git-conventional-commits). To
+  install the git hook, run the following command in the root directory of the project:
+
+    ```sh
+    brew install pre-commit
+    pre-commit install -t commit-msg
+    ```

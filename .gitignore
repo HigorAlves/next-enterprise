@@ -500,3 +500,6 @@ yarn-error.log*
 .sentryclirc
 
 @types
+
+# Sentry Config File
+.sentryclirc

@@ -1,19 +1,17 @@
-'use client'
 import React from 'react'
-import { AppShell } from '@mantine/core'
-import { Footer, Header } from '~/components'
+import { AppShell, AppShellMain } from '@mantine/core'
+import { Header } from '~/components'
 
 interface Props {
-  main: React.ReactNode
+  children: React.ReactNode
 }
 
-export function BasicLayout({ main }: Props) {
+export function BasicLayout({ children }: Props) {
   return (
     <AppShell header={{ height: 70 }} footer={{ height: 80 }}>
       <Header />
 
-      <AppShell.Main>{main}</AppShell.Main>
-      <Footer />
+      <AppShellMain>{children}</AppShellMain>
     </AppShell>
   )
 }

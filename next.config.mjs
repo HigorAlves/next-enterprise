@@ -11,7 +11,7 @@ const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
   trailingSlash: true,
   productionBrowserSourceMaps: true,
   output: 'standalone',
-  experimental: { instrumentationHook: true },
+	experimental: { instrumentationHook: true, optimizePackageImports: ['@mantine/core', '@mantine/hooks'] },
   rewrites() {
     return [
       { source: '/healthz', destination: '/api/health' },
@@ -28,8 +28,8 @@ export default withSentryConfig(config, {
 
 // Suppresses source map uploading logs during build
   silent: true,
-  org: 'higoralves',
-  project: 'higoralvesdev',
+	org: 'next-enterpise',
+	project: 'next-enterpise',
 }, {
 // For all available options, see:
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/

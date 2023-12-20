@@ -1,1 +1,1 @@
-export * from '~/layout/basic.layout'
+export * from '~/layout/Basic.layout'

@@ -7583,10 +7583,22 @@ contentful-typescript-codegen@^3.4.0:
     lodash "^4.17.21"
     meow "^9.0.0"
 
-contentful@^10.6.1, contentful@^10.6.14, contentful@^10.6.9:
+contentful@^10.6.1, contentful@^10.6.9:
   version "10.6.14"
   resolved "https://registry.yarnpkg.com/contentful/-/contentful-10.6.14.tgz#1cebb6ba947cb294c06e6d6e308d4b7dbbf98349"
   integrity sha512-FbdT+ApX7W5r2OZ/6GfKRls8BjrVtJBl/0ijz9ZdzZ7jpZavyQTo9JshSWGk7aJAs8vFGGDkrpaWO1gxYdi/tg==
+  dependencies:
+    "@contentful/rich-text-types" "^16.0.2"
+    axios "^1.6.0"
+    contentful-resolve-response "^1.8.1"
+    contentful-sdk-core "^8.1.0"
+    json-stringify-safe "^5.0.1"
+    type-fest "^4.0.0"
+
+contentful@^10.6.15:
+  version "10.6.16"
+  resolved "https://registry.yarnpkg.com/contentful/-/contentful-10.6.16.tgz#c238bf54bbed7a4300e2781ca48ced6a0d7ba4bc"
+  integrity sha512-3PF4VQAWOhy7CiGYm4KtQn9AN81p77BgSCDQNndFfWdggs6/b2wMWXkmN1UGSJI7OKBRpbiy12mNrr7SrvuVIA==
   dependencies:
     "@contentful/rich-text-types" "^16.0.2"
     axios "^1.6.0"

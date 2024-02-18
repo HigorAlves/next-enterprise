@@ -131,7 +131,7 @@
     "pretty-quick": "^4.0.0",
     "semantic-release": "^23.0.2",
     "solidarity": "^3.0.4",
-    "storybook": "^7.6.13",
+    "storybook": "^7.6.16",
     "storybook-dark-mode": "^3.0.3",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",

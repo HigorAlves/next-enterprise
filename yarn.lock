@@ -1314,12 +1314,12 @@
   dependencies:
     chalk "^4.1.0"
 
-"@contentful/rich-text-plain-text-renderer@^16.0.11":
-  version "16.0.11"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-plain-text-renderer/-/rich-text-plain-text-renderer-16.0.11.tgz#f39a127497b63a4edcbdc48502f58dfcab970bba"
-  integrity sha512-TlAgcJaddoKtqLJigd8hULch1hWJWTeh9q3hKtUQCWXG6aoOm/9creGYz/TYECU3nhKj+dUzCUwGlmyz1bbUmA==
+"@contentful/rich-text-plain-text-renderer@^16.0.13":
+  version "16.0.13"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-plain-text-renderer/-/rich-text-plain-text-renderer-16.0.13.tgz#ba82c4736ae94f95493fe8191e0d20239f8ddc19"
+  integrity sha512-r1w9NjxRAf275G7vtI9EiWVA5fWHXSCdx6yUYPsIxR2eHtwjswDG6QrmHeTBOuyKYPdEFtHUWTo6KTGGd0SYZg==
   dependencies:
-    "@contentful/rich-text-types" "^16.3.4"
+    "@contentful/rich-text-types" "^16.3.5"
 
 "@contentful/rich-text-react-renderer@^15.19.4":
   version "15.19.4"
@@ -1328,10 +1328,10 @@
   dependencies:
     "@contentful/rich-text-types" "^16.3.4"
 
-"@contentful/rich-text-types@^16.0.2", "@contentful/rich-text-types@^16.3.0", "@contentful/rich-text-types@^16.3.4":
-  version "16.3.4"
-  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-16.3.4.tgz#c5fc9c834dde03d4c4ee189900d304ce1888a74b"
-  integrity sha512-PyVSrQa5j1hO4grgA0Ivo/taiOvW0uFN79JB5JkTG8U7DnWGI7Ap2As6zN6/E6YvDqb7w2cYRMSGSQ3qfxu8HQ==
+"@contentful/rich-text-types@^16.0.2", "@contentful/rich-text-types@^16.3.0", "@contentful/rich-text-types@^16.3.4", "@contentful/rich-text-types@^16.3.5":
+  version "16.3.5"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-16.3.5.tgz#927433a84416101ba3dbf19bd0924e755f5e6d65"
+  integrity sha512-ZLq6p5uyQXg+i1XGDFu4tAc2VYS12S1KA/jIOyyZjNgC1DvDajsi1JzuiBuOuMEhi1sKEUy6Ry3Yr9jsQtOKuQ==
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"

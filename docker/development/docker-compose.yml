@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  with-docker-multi-env-development:
+    build:
+      context: ../../
+      dockerfile: docker/development/Dockerfile
+    image: with-docker-multi-env-development
+    ports:
+      - "3001:3000"
+    volumes:
+      - ../../:/app  # Mount the source code as a volume
+      - next-build:/app/.next  # Dedicated volume for Next.js build files
+    environment:
+      - NODE_ENV=development
+
+volumes:
+  next-build:  # This volume will store the Next.js build artifacts
+    driver: local

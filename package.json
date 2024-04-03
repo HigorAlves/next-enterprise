@@ -8,7 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "clean": "bash ./scripts/clean.sh",
+    "docker:dev": "bash ./scripts/development.sh",
+    "docker:dev:stop": "bash ./scripts/development.sh --stop",
+    "docker:stg": "bash ./scripts/staging.sh",
+    "docker:stg:stop": "bash ./scripts/staging.sh --stop",
+    "docker:prd": "bash ./scripts/production.sh",
+    "docker:prd:stop": "bash ./scripts/production.sh --stop"
   },
   "dependencies": {
     "next": "14.1.4",

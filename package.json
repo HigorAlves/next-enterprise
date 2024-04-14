@@ -129,7 +129,7 @@
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.2.5",
     "pretty-quick": "^4.0.0",
-    "semantic-release": "^23.0.2",
+    "semantic-release": "^23.0.8",
     "solidarity": "^3.0.4",
     "storybook": "^7.6.13",
     "storybook-dark-mode": "^3.0.3",

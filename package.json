@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
-    "@commitlint/cli": "^18.6.0",
+    "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^18.6.0",
     "@graphql-codegen/cli": "5.0.2",
     "@graphql-codegen/client-preset": "4.2.2",

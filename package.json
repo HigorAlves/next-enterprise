@@ -97,7 +97,7 @@
     "all-contributors-cli": "^6.26.1",
     "audit-ci": "^6.6.1",
     "autoprefixer": "^10.4.17",
-    "cf-content-types-generator": "^2.14.0",
+    "cf-content-types-generator": "^2.15.1",
     "contentful-management": "^11.14.4",
     "contentful-typescript-codegen": "^3.4.0",
     "cypress": "^13.6.4",

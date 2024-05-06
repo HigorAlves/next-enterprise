@@ -1,0 +1,4 @@
+{
+  "pattern": "^(master|main|develop){1}$|^(feature|feat|fix|hotfix|release)/.+$",
+  "errorMsg": "Branch name is not valid"
+}
